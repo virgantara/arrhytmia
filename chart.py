@@ -20,7 +20,7 @@ def auc_chart():
     plt.title("Data balancing AUC performance")
 
     plt.xticks(ind + width, ['NB', 'DT', 'RF', 'XGB', 'ADA', 'LR', 'SVM', 'BM', 'Our'])
-    plt.legend((bar1, bar2, bar3), ('Downsampling', 'Oversampling', 'SMOTE'))
+    plt.legend((bar1, bar2, bar3), ('Undersampling', 'Oversampling', 'SMOTE'),prop={'size':12})
     plt.show()
 
 
@@ -43,7 +43,8 @@ def cohen_chart():
     plt.title("Data balancing results using Cohen performance")
 
     plt.xticks(ind + width, ['NB', 'DT', 'RF', 'XGB', 'ADA', 'LR', 'SVM', 'BM', 'Our'])
-    plt.legend((bar1, bar2, bar3), ('Downsampling', 'Oversampling', 'SMOTE'))
+    plt.legend((bar1, bar2, bar3), ('Undersampling', 'Oversampling', 'SMOTE'),prop={'size':12})
     plt.show()
 
+# auc_chart()
 cohen_chart()

@@ -26,10 +26,10 @@ std_sc = preprocessing.StandardScaler()
 sc = preprocessing.MinMaxScaler()
 pca = PCA(n_components=5)
 
-headers = ["atr"+str(i) for i in range(1,30)]
+headers = ["atr"+str(i) for i in range(1,56)]
 headers = np.append(headers,'class')
 # print(headers)
-data = pd.read_csv("features_ensembled.csv",names=headers)
+data = pd.read_csv("features_ensemble.csv",names=headers)
 # data = pd.read_csv("dataset/mfcc_features_imbalance_scaled.csv")
 # print(data.head())
 
@@ -346,12 +346,12 @@ def get_optimized_model_mlp(is_using_optimized=True):
 
     return hasil
 
-data_prep = get_data_from_smote(data, is_pca=False,n_component=16)
+data_prep = get_data_from_smote(data, is_pca=True,n_component=20)
 
 X_train, X_test, y_train, y_test = data_prep
 
 # rf_random = get_optimized_model(is_using_optimized=False)
-is_using_optimized = False
+is_using_optimized = True
 mlp_random = get_optimized_model_mlp(is_using_optimized=is_using_optimized)
 # rf_grid = get_optimized_model_grid(is_using_optimized=False)
 
