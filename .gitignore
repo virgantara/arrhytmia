@@ -1,0 +1,8 @@
+*.wav
+.idea/**
+*.zip
+*.h5
+*.csv
+dataset/raw/**
+dataset/physionet.org/**
+__pycache__/**

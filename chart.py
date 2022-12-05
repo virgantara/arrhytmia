@@ -19,8 +19,14 @@ def auc_chart():
     plt.ylabel('AUC Score')
     plt.title("Data balancing AUC performance")
 
+    plt.tick_params(axis='x', labelsize=14)
+    plt.tick_params(axis='y', labelsize=14)
+
     plt.xticks(ind + width, ['NB', 'DT', 'RF', 'XGB', 'ADA', 'LR', 'SVM', 'BM', 'Our'])
-    plt.legend((bar1, bar2, bar3), ('Undersampling', 'Oversampling', 'SMOTE'),prop={'size':12})
+    plt.legend((bar1, bar2, bar3), ('Undersampling', 'Oversampling', 'SMOTE'), prop={'size': 12},
+               bbox_to_anchor=(0.1, -0.40), loc='lower center')
+    # plt.legend((bar1, bar2, bar3), ('Undersampling', 'Oversampling', 'SMOTE'),prop={'size':12})
+    plt.tight_layout()
     plt.show()
 
 
@@ -39,12 +45,17 @@ def cohen_chart():
     bar3 = plt.bar(ind + width * 2, zvals, width, color='b')
 
     plt.xlabel("Method")
-    plt.ylabel('Cohen\'s Kapp Score')
+    plt.ylabel('Cohen\'s Kappa Score')
     plt.title("Data balancing results using Cohen performance")
 
     plt.xticks(ind + width, ['NB', 'DT', 'RF', 'XGB', 'ADA', 'LR', 'SVM', 'BM', 'Our'])
-    plt.legend((bar1, bar2, bar3), ('Undersampling', 'Oversampling', 'SMOTE'),prop={'size':12})
+    plt.tick_params(axis='x', labelsize=14)
+    plt.tick_params(axis='y', labelsize=14)
+
+    plt.legend((bar1, bar2, bar3), ('Undersampling', 'Oversampling', 'SMOTE'),prop={'size':12},bbox_to_anchor=(0.1,-0.40), loc='lower center')
+    # plt.legend((bar1, bar2, bar3), ('Undersampling', 'Oversampling', 'SMOTE'),prop={'size':12})
+    plt.tight_layout()
     plt.show()
 
-# auc_chart()
+auc_chart()
 cohen_chart()
