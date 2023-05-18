@@ -15,8 +15,8 @@ def auc_chart():
     zvals = [0.604, 0.8333, 0.7291, 0.8333, 0.75, 0.7083, 0.75, 0.833, 0.916]
     bar3 = plt.bar(ind + width * 2, zvals, width, color='b')
 
-    plt.xlabel("Method")
-    plt.ylabel('AUC Score')
+    plt.xlabel("Method",fontsize=14)
+    plt.ylabel('AUC Score',fontsize=14)
     plt.title("Data balancing AUC performance")
 
     plt.tick_params(axis='x', labelsize=14)
@@ -44,8 +44,8 @@ def cohen_chart():
     zvals = [0.2083,0.6666,0.458,0.666,0.5,0.41666,0.5,0.666,0.833]
     bar3 = plt.bar(ind + width * 2, zvals, width, color='b')
 
-    plt.xlabel("Method")
-    plt.ylabel('Cohen\'s Kappa Score')
+    plt.xlabel("Method",fontsize=14)
+    plt.ylabel('Cohen\'s Kappa Score',fontsize=14)
     plt.title("Data balancing results using Cohen performance")
 
     plt.xticks(ind + width, ['NB', 'DT', 'RF', 'XGB', 'ADA', 'LR', 'SVM', 'BM', 'Our'])
